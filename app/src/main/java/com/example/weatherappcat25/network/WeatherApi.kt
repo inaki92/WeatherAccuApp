@@ -12,12 +12,14 @@ interface WeatherApi {
     @GET(ZIP_CODE_SEARCH)
     suspend fun getLocationByZipCode(
         @Query("q") zipCode: String,
-        @Query("apiKey") apiKey: String = API_KEY
+        @Query("apikey") apiKey: String = API_KEY
     ): Response<List<ZipCodesItem>>
 
     @GET(FORECAST_SEARCH)
     suspend fun getOneDayForecast(
-        @Path("locationKey") locationKey: String
+        @Path("locationKey") locationKey: String,
+        @Query("apikey") apiKey: String = API_KEY,
+        @Query("details") details: Boolean = true
     ): Response<Forecast>
 
     companion object {

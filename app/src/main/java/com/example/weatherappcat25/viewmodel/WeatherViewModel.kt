@@ -1,5 +1,6 @@
 package com.example.weatherappcat25.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,6 +21,12 @@ class WeatherViewModel @Inject constructor(
     private val ioDispatcher: CoroutineDispatcher,
     private val lastKnownLocationUseCase: LastKnownLocationUseCase
 ) : ViewModel() {
+
+    init {
+        Log.d("VIEWMODEL", "VIEWMODEL: CREATED")
+    }
+
+    var permsGranted: Boolean = false
 
     private val _forecast: MutableLiveData<ResponseState> = MutableLiveData(ResponseState.LOADING)
     val forecast: LiveData<ResponseState> get() = _forecast
@@ -79,5 +86,10 @@ class WeatherViewModel @Inject constructor(
 
     fun resetState() {
         _forecast.value = ResponseState.LOADING
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.d("VIEWMODEL", "VIEWMODEL: CLEARED")
     }
 }

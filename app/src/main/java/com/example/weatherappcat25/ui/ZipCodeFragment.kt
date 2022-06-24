@@ -37,6 +37,11 @@ class ZipCodeFragment : BaseFragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.useCurrentLoc.isEnabled = weatherViewModel.permsGranted
+    }
+
     private fun observerOnZipCode() {
         weatherViewModel.zipCode.observe(viewLifecycleOwner) {
             it?.let {

@@ -4,7 +4,9 @@ import android.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.weatherappcat25.viewmodel.WeatherViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 open class BaseFragment : Fragment() {
 
     protected val weatherViewModel: WeatherViewModel by activityViewModels()
