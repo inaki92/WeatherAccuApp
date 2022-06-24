@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName
 data class Night(
     @SerializedName("CloudCover")
     val cloudCover: Int? = 0,
-    @SerializedName("Evapotranspiration")
-    val evapotranspiration: EvapotranspirationX? = EvapotranspirationX(),
+//    @SerializedName("Evapotranspiration")
+//    val evapotranspiration: EvapotranspirationX? = EvapotranspirationX(),
     @SerializedName("HasPrecipitation")
     val hasPrecipitation: Boolean? = false,
     @SerializedName("HoursOfIce")
@@ -18,8 +18,8 @@ data class Night(
     val hoursOfRain: Double? = 0.0,
     @SerializedName("HoursOfSnow")
     val hoursOfSnow: Double? = 0.0,
-    @SerializedName("Ice")
-    val ice: IceX? = IceX(),
+//    @SerializedName("Ice")
+//    val ice: IceX? = IceX(),
     @SerializedName("IceProbability")
     val iceProbability: Int? = 0,
     @SerializedName("Icon")
@@ -30,22 +30,22 @@ data class Night(
     val longPhrase: String? = "",
     @SerializedName("PrecipitationProbability")
     val precipitationProbability: Int? = 0,
-    @SerializedName("Rain")
-    val rain: RainX? = RainX(),
+//    @SerializedName("Rain")
+//    val rain: RainX? = RainX(),
     @SerializedName("RainProbability")
     val rainProbability: Int? = 0,
     @SerializedName("ShortPhrase")
     val shortPhrase: String? = "",
-    @SerializedName("Snow")
-    val snow: SnowX? = SnowX(),
+//    @SerializedName("Snow")
+//    val snow: SnowX? = SnowX(),
     @SerializedName("SnowProbability")
     val snowProbability: Int? = 0,
-    @SerializedName("SolarIrradiance")
-    val solarIrradiance: SolarIrradianceX? = SolarIrradianceX(),
+//    @SerializedName("SolarIrradiance")
+//    val solarIrradiance: SolarIrradianceX? = SolarIrradianceX(),
     @SerializedName("ThunderstormProbability")
     val thunderstormProbability: Int? = 0,
-    @SerializedName("TotalLiquid")
-    val totalLiquid: TotalLiquidX? = TotalLiquidX(),
+    //@SerializedName("TotalLiquid")
+    //val totalLiquid: TotalLiquidX? = TotalLiquidX(),
     @SerializedName("Wind")
     val wind: WindX? = WindX(),
     @SerializedName("WindGust")

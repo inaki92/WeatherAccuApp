@@ -7,5 +7,5 @@ data class WindX(
     @SerializedName("Direction")
     val direction: Direction? = Direction(),
     @SerializedName("Speed")
-    val speed: SpeedXX? = SpeedXX()
+    val speed: Speed? = Speed()
 )

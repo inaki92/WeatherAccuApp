@@ -10,6 +10,7 @@
         android:name="com.example.weatherappcat25.ui.ZipCodeFragment"
         android:label="Zip Code"
         tools:layout="@layout/fragment_zip_code">
+
         <action
             android:id="@+id/action_ZipCodeFragment_to_ForecastFragment"
             app:destination="@id/ForecastFragment" />

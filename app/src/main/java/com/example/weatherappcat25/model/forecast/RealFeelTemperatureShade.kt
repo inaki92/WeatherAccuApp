@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class RealFeelTemperatureShade(
     @SerializedName("Maximum")
-    val maximum: MaximumX? = MaximumX(),
+    val maximum: MaximumXX? = MaximumXX(),
     @SerializedName("Minimum")
-    val minimum: MinimumX? = MinimumX()
+    val minimum: MinimumXX? = MinimumXX()
 )
