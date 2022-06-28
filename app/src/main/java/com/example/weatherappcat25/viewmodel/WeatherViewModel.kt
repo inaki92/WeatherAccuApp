@@ -22,10 +22,6 @@ class WeatherViewModel @Inject constructor(
     private val lastKnownLocationUseCase: LastKnownLocationUseCase
 ) : ViewModel() {
 
-    init {
-        Log.d("VIEWMODEL", "VIEWMODEL: CREATED")
-    }
-
     var permsGranted: Boolean = false
 
     private val _forecast: MutableLiveData<ResponseState> = MutableLiveData(ResponseState.LOADING)
