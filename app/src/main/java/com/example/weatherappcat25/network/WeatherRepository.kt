@@ -20,14 +20,14 @@ class WeatherRepositoryImpl @Inject constructor(
     override fun getLocationKeyByZipCode(zipCode: String): Flow<ResponseState> =
         flow {
             emit(ResponseState.LOADING)
-            delay(2000)
+            //delay(2000)
 
             try {
                 val response = weatherApi.getLocationByZipCode(zipCode)
                 if (response.isSuccessful) {
                     response.body()?.let {
                         emit(ResponseState.SUCCESS(it.mapToDomainZipCode()))
-                    } ?: throw Exception("RESPONSE IS NULL")
+                    } ?: throw Exception(RESPONSE_NULL)
                 } else {
                     throw Exception(response.errorBody()?.string())
                 }
@@ -47,7 +47,7 @@ class WeatherRepositoryImpl @Inject constructor(
                 if (response.isSuccessful) {
                     response.body()?.let {
                         emit(ResponseState.SUCCESS(it.mapToDomainForecast().first()))
-                    } ?: throw Exception("RESPONSE IS NULL")
+                    } ?: throw Exception(RESPONSE_NULL)
                 } else {
                     throw Exception(response.errorBody()?.string())
                 }
@@ -56,5 +56,9 @@ class WeatherRepositoryImpl @Inject constructor(
                 emit(ResponseState.ERROR(e))
             }
         }
+
+    companion object {
+        private const val RESPONSE_NULL = "RESPONSE IS NULL"
+    }
 
 }
